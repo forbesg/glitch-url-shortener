@@ -1,2 +1,4 @@
-# glitch-url-shortener
-A Simple URL Shortener for FreeCodeCamp
+URL Shortener - For FCC
+=========================
+
+A simple url shortener application
