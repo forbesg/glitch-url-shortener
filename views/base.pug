@@ -1,0 +1,58 @@
+html
+  head
+    title URL Shortener for Free Code Camp
+    meta(name="viewport" content="width=device-width initial-scale=1.0")
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.4.1/spectre.min.css')
+    link(rel='stylesheet', href='https://picturepan2.github.io/spectre/dist/spectre-icons.css')
+    style.
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      body {
+      padding: 20px;
+      }
+      h1, h2, h3, h4, h5, h6 {
+      font-weight: normal;
+      }
+      header {
+      background-color: #5764c6;
+      color: #ddd;
+      margin: -20px -20px 20px -20px;
+      padding: 20px;
+      }
+      hr {
+        margin: 50px 0
+      }
+      form {
+      margin: 10px 0;
+      }
+      .toast {
+        animation: fadeInDown 0.2s linear;
+      }
+      .tile {
+        margin-top: 20px;
+      }
+  body
+    header.text-center
+      h1
+        | A Simple URL Shortener
+      h2.h4
+        | For Free Code Camp
+    .container
+      .columns
+        .column.col-8.col-md-12.col-mx-auto
+          block content
+    footer
+      .container
+        .columns
+          .col-8.col-mx-auto.column
+            p.text-center
+              | Forbes Gray 2017
+    block scripts

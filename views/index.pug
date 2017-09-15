@@ -1,0 +1,46 @@
+extends base.pug
+
+block content
+  section
+    .intro
+      h4 
+        | Quick Guide
+      p This simple URL Shortener takes a vaild URL (eg http://www.some-domain.com) and returns a shortened url
+      p The shortened URL will then redirect incoming requests to the original URL
+      p To shorten a url either type it into the form below or add it as a paramater 
+        b (e.g https://fnbg.glitch.me/api/Vaild URL goes here)
+      p A successful request will return a JSON object containing both the original url and the newly generated short url.
+      p Shortened URL's are stored so that any future requests will redirect to the original URL.
+      
+      
+    hr  
+    .columns
+      .column.col-6.col-md-12
+        if error
+          .toast.toast-error
+            h6 Error
+            p #{error}
+        h4
+          | Enter your url below
+        form.form(action='/api', method='POST')
+          .form-group
+            label.form-label(for='url') URL: 
+            input#url.form-input(type='url', name='url', placeholder='URL')
+          .form-group
+            button.btn(type='submit')
+              | Shorten URL
+      .urls.column.col-6.col-md-12
+        if urls
+          h4 
+            | Recently Shortened URLS
+          for u in urls
+            .tile.tile-centered
+              .tile-icon
+                .btn.btn-primary.btn-action.btn-lg
+                  i.icon.icon-link.centered
+              .tile-content
+                .tile-title 
+                  a(href="" + u.short_url + "") #{u.short_url}
+                .tile-subtitle.text-gray #{u.original_url}
+            br
+        
