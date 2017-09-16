@@ -12,7 +12,6 @@ block content
       p A successful request will return a JSON object containing both the original url and the newly generated short url.
       p Shortened URL's are stored so that any future requests will redirect to the original URL.
       
-      
     hr  
     .columns
       .column.col-6.col-md-12
@@ -36,11 +35,14 @@ block content
           for u in urls
             .tile.tile-centered
               .tile-icon
-                .btn.btn-primary.btn-action.btn-lg
+                a(href="" + u.short_url + "" target="_blank").btn.btn-primary.btn-action.btn-lg
                   i.icon.icon-link.centered
               .tile-content
                 .tile-title 
-                  a(href="" + u.short_url + "") #{u.short_url}
+                  a(href="" + u.short_url + "" target="_blank") #{u.short_url}
                 .tile-subtitle.text-gray #{u.original_url}
             br
+    hr
+    p You can access the JSON of all shortened urls at 
+      a(href="https://fnbg.glitch.me/api/all") https://fnbg.glitch.me/api/all
         
