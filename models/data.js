@@ -20,7 +20,8 @@ module.exports = {
     fs.readFile(db, 'utf8', (err, data) => {
       if (err) return cb(err, null)
       let dataObject = JSON.parse(data);
-      if (dataObject.length > 0) {
+      
+      if (dataObject.length > 0 && parseInt(index, 10) < dataObject.length) {
         let url = dataObject[index].original_url;
         return cb(err, url);
       }
